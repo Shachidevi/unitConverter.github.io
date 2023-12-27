@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: linear-gradient(to bottom, rgb(54, 54, 145), black);
+        }
+        #head{
+               color: rgb(12, 2, 20);
+               font-size: 30px;
+               margin-left: 40%;
+               width: 270px;
+               margin-top: 50px;
+               text-decoration: underline;
+               text-shadow: 6px 2px 5px rgb(121, 121, 196);
+        }
+        .p1{
+            border: 2px solid black;
+            height: 200px;
+            margin: 40px 120px 150px 270px;
+            width: 800px;
+            background: radial-gradient(rgb(209, 216, 142),rgb(25, 25, 126));
+        }
+        .S1{
+            background-color: blueviolet;
+            border-radius: 20px;
+            border-color: black;
+            height: 40px;
+            width: 100px;
+            margin: 10px 10px 160px 5px;
+            text-align: center;
+            font-size: 20px;
+        }
+        .q1{
+            border-radius: 20px;
+            background-color: rgb(131, 131, 197);
+            height: 30px;
+            width: 100px;
+            font-size: 20px;
+        }
+        .name{
+            font-size: 23px;
+        }
+        .S2{
+            background-color: blueviolet;
+            border-radius: 20px;
+            height: 33px;
+            width: 200px;
+            margin: -200px 100px 200px 580px;
+            text-align: center;
+            font-size: 24px;
+            border: 2px solid black;
+            text-indent: 10px;
+        }
+        .p2{
+            border: 2px solid black;
+            height: 200px;
+            margin: -100px 120px 150px 270px;
+            width: 800px;
+            background: radial-gradient(rgb(209, 216, 142),rgb(25, 25, 126));
+        }
+
+    </style>
+</head>
+<body>
+    <div id="head">UNIT CONVERTER.</div>
+    <div class="p1">
+        <h1 style="text-align: center;">LENTH CONVERSION</h1>
+        <label for="value" class="name">Enter the value in inch:</label>
+        <input type="text" class="S1" >
+        <!-- <button type="button" id="q1" onclick="display()">convert</button> -->
+        <label for="text" class="name">Convert to :</label>
+        <select name="convertion0" class="q1" onchange="convert0()">
+         <!-- <option value="unit">unit</option>   
+        <option value="inch">inch</option> -->
+        <option value="mm">mm</option>
+        <option value="cm">cm</option>
+        <option value="meter">meter</option>
+        <option value="km">km</option>
+        <option value="yard">yard</option>
+        <option value="mile">mile</option>
+        <option value="foot">foot</option>
+    </select>   
+    <h4 class="S2"></h4>      
+    </div>
+    <div class="p2">
+        <h1 style="text-align: center;">MASS/WEIGHT CONVERSION</h1>
+        <label for="value" class="name">Enter the value in grain:</label>
+        <input type="text" class="S1 K1" >
+        <label for="text" class="name">Convert to :</label>
+        <select name="convertion1" class="q1 L1" onchange="convert1()">
+         <!-- <option value="unit">unit</option>   
+        <option value="grain">grain</option> -->
+        <option value="ounce">ounce</option>
+        <option value="pound">pound</option>
+        <option value="mg">mg</option>
+        <option value="gram">gram</option>
+        <option value="kg">kg</option>
+        <option value="tonne">tonne</option>
+        <option value="long tonne">long tonne</option>
+    </select>   
+    <h4 class="S2 M1"></h4>      
+    </div>
+
+    <div class="p2">
+        <h1 style="text-align: center;">AREA CONVERSION</h1>
+        <label for="value" class="name">Enter the value in sq.in:</label>
+        <input type="text" class="S1 K2" >
+        <label for="text" class="name">Convert to :</label>
+        <select name="convertion2" class="q1 L2" onchange="convert2()">
+         <!-- <option value="unit">unit</option>   
+        <option value="sq.inch">sq.in</option> -->
+        <option value="sq.cm">sq.cm</option>
+        <option value="sq.foot">sq.foot</option>
+        <option value="sq.meter">sq.meter</option>
+        <option value="sq.yard">sq.yard</option>
+        <option value="sq.km">sq.km</option>
+        <option value="hectare">hectare</option>
+        <option value="acre">acre</option>
+    </select>   
+    <h4 class="S2 M2"></h4>      
+    </div>
+
+    <div class="p2">
+        <h1 style="text-align: center;">TEMPERATURE CONVERSION</h1>
+        <label for="value" class="name">Enter the value in deg.C:</label>
+        <input type="text" class="S1 K3" >
+        <label for="text" class="name">Convert to :</label>
+        <select name="Convertion3" class="q1 L3" onchange="convert3()">
+        <option value="unit">unit</option>   
+        <option value="celsius">celsius</option>
+         <option value="fahrenheit">fahrenheit</option> 
+         <option value="kelvin">kelvin</option>
+    </select>   
+    <h4 class="S2 M3"></h4>      
+    </div>
+    <h1 style="font-style: italic; text-align: center; color: rgb(4, 99, 67);">Thank you!!!</h1>
+</body>
+<script>
+      function convert0(){
+        let input = document.querySelector(".S1").value;
+        let convertion = document.querySelector(".q1");
+        let result = document.querySelector(".S2");
+        if (convertion.value ==="inch"){
+            result.innerHTML=input*1;
+        }else if (convertion.value === "mm"){
+            result.innerHTML=input*25.4
+        }else if (convertion.value ==="cm"){
+            result.innerHTML=input*2.54
+        }else if (convertion.value ==="meter"){
+            result.innerHTML=input*0.0254
+        }else if (convertion.value ==="km"){
+            result.innerHTML=input*2.54e-5
+        }else if (convertion.value ==="yard"){
+            result.innerHTML=input*27.78e-3
+        }else if (convertion.value ==="mile"){
+            result.innerHTML=input*1.5783e-5
+        }else if (convertion.value ==="foot"){
+            result.innerHTML=input*83.33e-3
+        }
+         }
+         function convert1(){
+        let input1 = document.querySelector(".K1").value;
+        let convertion1 = document.querySelector(".L1");
+        let result1 = document.querySelector(".M1");
+        if (convertion1.value ==="grain"){
+            result1.innerHTML=input1*1;
+        }else if (convertion1.value === "ounce"){
+            result1.innerHTML=input1*22.85e-4
+        }else if (convertion1.value ==="pound"){
+            result1.innerHTML=input1*14.28e-5
+        }else if (convertion1.value ==="mg"){
+            result1.innerHTML=input1*64.7989
+        }else if (convertion1.value ==="gram"){
+            result1.innerHTML=input1*64.7989e-3
+        }else if (convertion1.value ==="kg"){
+            result1.innerHTML=input1*6.4799e-5
+        }else if (convertion1.value ==="tonne"){
+            result1.innerHTML=input1*6.48e-8
+        }else if (convertion1.value ==="long tonne"){
+            result1.innerHTML=input1*6.378e-8
+        }
+         }
+         function convert2(){
+        let input2 = document.querySelector(".K2").value;
+        let convertion2 = document.querySelector(".L2");
+        let result2 = document.querySelector(".M2");
+        if (convertion2.value ==="sq.inch"){
+            result2.innerHTML=input2*1;
+        }else if (convertion2.value === "sq.cm"){
+            result2.innerHTML=input2*25.4
+        }else if (convertion2.value ==="sq.foot"){
+            result2.innerHTML=input2*69.4e-4
+        }else if (convertion2.value ==="sq.meter"){
+            result2.innerHTML=input2*64.51e-5
+        }else if (convertion2.value ==="sq.yard"){
+            result2.innerHTML=input2*77.16e-5
+        }else if (convertion2.value ==="sq.km"){
+            result2.innerHTML=input2*0.65e-8
+        }else if (convertion2.value ==="hectare"){
+            result2.innerHTML=input2*0.065e-6
+        }else if (convertion2.value ==="acre"){
+            result2.innerHTML=input2*1.59e-7
+         }
+        }
+        function convert3(){
+        let input3 = document.querySelector(".K3").value;
+        let convertion3 = document.querySelector(".L3");
+        let result3 = document.querySelector(".M3");
+        if (convertion3.value ==="celsius"){
+            result3.innerHTML=input3*1;
+        }else if (convertion3.value === "fahrenheit"){
+            result3.innerHTML=input3*33.8
+        }else if (convertion3.value === "kelvin"){
+            result3.innerHTML=input3*274.15
+        }
+        }
+</script>
+</html>
